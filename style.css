@@ -1,0 +1,214 @@
+:root {
+  --clr-primary-500: hsl(271, 36%, 24%);
+  --clr-primary-400: hsl(276, 55%, 52%);
+  --clr-primary-300: hsl(289, 100%, 72%);
+  --clr-secondary-400: hsl(276, 100%, 81%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(270, 20%, 96%);
+  --clr-neutral-300: hsl(206, 6%, 79%);
+  --clr-neutral-400: hsl(270, 7%, 64%);
+  --clr-neutral-500: hsl(271, 15%, 43%);
+
+  --clr-vibrant-400: hsl(293, 100%, 63%);
+  --clr-vibrant-500: hsl(264, 100%, 61%);
+
+  --ff-primary: "Rubik", sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --fs-400: 1rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+
+  }
+}
+
+.drop {
+  width: 28rem;
+  height:36rem;
+  border-radius: 0 0 14rem 14rem;
+  position: relative;
+  top: 0rem;
+  left: -3rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(var(--clr-vibrant-400), var(--clr-vibrant-500));
+}
+
+body {
+  display: flex;
+  align-items: center;
+}
+
+.mobile {
+  background-color: var(--clr-neutral-200);
+  outline: var(--clr-neutral-100) solid 15px;
+  height: 30rem;
+  width: 20rem;
+  border-radius: 30px;
+  box-shadow: 0px 28px 44px hsla(195, 2%, 55%, 0.4);
+  position: relative;
+  left: 4rem;
+  top: 0;
+}
+
+.mobile>header {
+  background: linear-gradient(90deg, var(--clr-primary-500) 0% ,var(--clr-primary-400));
+  padding: 0 1rem 1rem 1rem;
+  border-radius: 0 0 5px 5px;
+}
+
+.mobile>header>.notch {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 70%;
+  height: 1.5rem;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 1rem;
+}
+
+.mobile>header>.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.three-dots {
+  margin-left: auto;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+
+.person-img {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: var(--clr-neutral-100);
+  outline: var(--clr-neutral-100) solid 2px;
+}
+
+.person-img>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.cls-1 {
+  fill: var(--clr-neutral-100);
+}
+
+.person-info > div > .name {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+  color: var(--clr-neutral-200);
+}
+
+.person-info > div > .status {
+  font-family: var(--ff-primary);
+  font-size: 0.75rem;
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-300);
+}
+.chat-section {
+  paddings: .75rem .5rem 0 .5rem;
+}
+.chat-box {
+  background-color: var(--clr-neutral-100);
+  width: 70%;
+  border-radius: 10px 10px 10px 5px;
+  position: relative;
+  top: 0;
+  left: 0;
+
+
+}
+
