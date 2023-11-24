@@ -16,10 +16,14 @@
 
   --fw-400: 400;
   --fw-500: 500;
-  --fw-700: 700;
+  --fw-700: 600;
 
+  --fs-50: 0.4rem;
+  --fs-100: 0.5rem;
+  --fs-200: 0.625rem;
+  --fs-300: 0.75rem;
   --fs-400: 1rem;
-
+  --fs-700: 2.5rem;
 }
 
 /* Box sizing rules */
@@ -27,7 +31,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  outline: red 1px solid;
 }
+
+
 
 /* Remove default margin */
 body,
@@ -65,7 +72,10 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-
+  display: flex;
+  background-color: var(--clr-neutral-200);
+  font-family: var(--ff-primary);
+  overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -106,37 +116,66 @@ select {
 }
 
 .drop {
-  width: 28rem;
-  height:36rem;
-  border-radius: 0 0 14rem 14rem;
+  width: 33rem;
+  height: 53rem;
+  border-radius: 0 0 17rem 15rem;
   position: relative;
-  top: 0rem;
-  left: -3rem;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(var(--clr-vibrant-400), var(--clr-vibrant-500));
+  background: hsl(270, 1%, 94%);
+  overflow: hidden;
+  z-index: -1;
+}
+
+.purple-drop {
+  background: linear-gradient(var(--clr-vibrant-400) 0%, var(--clr-vibrant-500));
+  top: -10rem;
+  left: -8rem;
+}
+
+.reverse-drop {
+  width: 30rem;
+  right: -10rem;
+  top: 8rem;
+  position: absolute;
+  border-radius: 15rem 15rem 0 0;
+  overflow: hidden;
+
 }
 
 body {
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 0;
+  margin: 0;
 }
 
 .mobile {
   background-color: var(--clr-neutral-200);
-  outline: var(--clr-neutral-100) solid 15px;
-  height: 30rem;
-  width: 20rem;
-  border-radius: 30px;
+  outline: var(--clr-neutral-100) solid 10px;
+  width: 14rem;
+  border-radius: 22px;
   box-shadow: 0px 28px 44px hsla(195, 2%, 55%, 0.4);
   position: relative;
-  left: 4rem;
-  top: 0;
+  left: -10.5rem;
+  top: 9.8rem;
+  padding-bottom: .75rem;
+}
+
+.right-side {
+  display: flex;
+  align-items: flex-start;
 }
 
 .mobile>header {
-  background: linear-gradient(90deg, var(--clr-primary-500) 0% ,var(--clr-primary-400));
-  padding: 0 1rem 1rem 1rem;
-  border-radius: 0 0 5px 5px;
+  background: linear-gradient(90deg, rgb(140, 59, 252), rgb(228, 67, 255));
+  /* rgb(228, 67, 255)
+  rgb(140, 59, 252) */
+  padding: 0 .75rem .6rem 1rem;
+  border-radius: 10px 10px 6px 6px;
 }
 
 .mobile>header>.notch {
@@ -144,17 +183,17 @@ body {
   left: 50%;
   transform: translateX(-50%);
   top: 0;
-  width: 70%;
-  height: 1.5rem;
+  width: 62%;
+  height: 1.1rem;
   background-color: var(--clr-neutral-100);
-  border-radius: 0 0 20px 20px;
-  margin-bottom: 1rem;
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 0.5rem;
 }
 
 .mobile>header>.contact-info {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.625rem;
 }
 
 .three-dots {
@@ -164,15 +203,15 @@ body {
 .person-info {
   display: flex;
   align-items: center;
-  gap: .75rem;
+  gap: .5rem;
 }
 
 .person-img {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
   border-radius: 50%;
   background-color: var(--clr-neutral-100);
-  outline: var(--clr-neutral-100) solid 2px;
+  outline: var(--clr-neutral-100) solid 1px;
 }
 
 .person-img>img {
@@ -185,30 +224,158 @@ body {
   fill: var(--clr-neutral-100);
 }
 
-.person-info > div > .name {
+.person-info>div>.name {
   font-family: var(--ff-primary);
-  font-size: 1rem;
+  font-size: .64rem;
   font-weight: var(--fw-700);
   color: var(--clr-neutral-200);
 }
 
-.person-info > div > .status {
+.person-info>div>.status {
   font-family: var(--ff-primary);
-  font-size: 0.75rem;
+  font-size: 0.5rem;
   font-weight: var(--fw-400);
   color: var(--clr-neutral-300);
 }
+
 .chat-section {
-  paddings: .75rem .5rem 0 .5rem;
+  padding: .75rem .5rem 0 .5rem;
 }
+
 .chat-box {
   background-color: var(--clr-neutral-100);
-  width: 70%;
-  border-radius: 10px 10px 10px 5px;
+  width: fit-content;
+  /* max-width: 28ch; */
+  border-radius: .7rem .7rem 5px .7rem;
   position: relative;
   top: 0;
-  left: 0;
-
-
+  margin-bottom: .5rem;
+  margin-left: auto;
+  padding: 0.4rem .5rem 0.3rem .5rem;
+  padding: .3rem;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-100);
+  font-weight: var(--fw-400);
+  background-color: var(--clr-neutral-100);
 }
 
+.chat-box>p {
+  max-width: 22ch;
+}
+
+.chat-box:nth-child(5) {
+  margin-bottom: 1.2rem;
+}
+
+.other-person {
+  border-radius: .7rem .7rem .7rem 5px;
+  background-color: hsl(273, 77%, 92%);
+  color: var(--clr-primary-400);
+  margin-left: 0;
+}
+
+.images-box {
+  max-width: 65%;
+  display: grid;
+  align-items: start;
+  justify-content: end;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .5rem;
+  background-color: transparent;
+  padding: 0;
+}
+
+.images-box>img {
+  width: 2.65rem;
+  aspect-ratio: 1;
+  border-radius: .6rem;
+  margin-top: 10px;
+}
+
+.price-box {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  background: linear-gradient(90deg, rgb(228, 67, 255), rgb(140, 59, 252));
+  min-width: 75%;
+  color: var(--clr-neutral-100);
+  padding-right: 1rem;
+  padding: 0.5rem 1rem 0.5rem .5rem;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-clip: content-box;
+  border: 0.1em solid var(--clr-primary-300);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: border-color 0.2s ease-out;
+  margin: 0 0.5em 0 0;
+  transition: outline 0.2s ease-out;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--clr-neutral-300);
+  outline: var(--clr-primary-300) solid 2px;
+  outline-offset: -2px;
+}
+
+.price-box>.price {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
+  margin-left: auto;
+}
+
+.send-box {
+  background-color: var(--clr-neutral-100);
+  padding: .4rem 0rem .4rem 1rem;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+input[type="text"] {
+  border: none;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-200);
+}
+
+input[type="text"]::placeholder {
+  color: var(--clr-neutral-400);
+}
+
+button[type="submit"] {
+  border: none;
+  background-color: transparent;
+  height: 23px !important;
+  width: 40px !important;
+  cursor: pointer;
+  padding: 0;
+  height: fit-content;
+  margin-left: auto;
+}
+
+.left-side {
+  font-family: var(--ff-primary);
+  max-width: 45ch;
+}
+
+.left-side>p {
+  color: var(--clr-neutral-400);
+  line-height: 1.75;
+  font-size: var(--fs-400);
+}
+
+.left-side>h2 {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-700);
+  color: var(--clr-primary-500);
+  margin-bottom: 1rem;
+
+}
