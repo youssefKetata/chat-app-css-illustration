@@ -31,7 +31,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  outline: red 1px solid;
 }
 
 
@@ -75,7 +74,6 @@ body {
   display: flex;
   background-color: var(--clr-neutral-200);
   font-family: var(--ff-primary);
-  overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -116,36 +114,37 @@ select {
 }
 
 .drop {
-  width: 33rem;
-  height: 53rem;
+  width: 30rem;
+  height: 38rem;
+  max-height: 95dvh;
   border-radius: 0 0 17rem 15rem;
   position: relative;
   background: hsl(270, 1%, 94%);
-  overflow: hidden;
   z-index: -1;
 }
 
 .purple-drop {
   background: linear-gradient(var(--clr-vibrant-400) 0%, var(--clr-vibrant-500));
-  top: -10rem;
-  left: -8rem;
+  top: 0;
+  left: -5rem;
 }
 
 .reverse-drop {
   width: 30rem;
+  position: absolute;
   right: -10rem;
   top: 8rem;
-  position: absolute;
   border-radius: 15rem 15rem 0 0;
-  overflow: hidden;
-
 }
 
 body {
-  display: flex;
-  align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.main-section {
+  display: flex;
+  align-items: center;
 }
 
 section {
@@ -156,12 +155,12 @@ section {
 .mobile {
   background-color: var(--clr-neutral-200);
   outline: var(--clr-neutral-100) solid 10px;
-  width: 14rem;
+  width: 13.5rem;
   border-radius: 22px;
   box-shadow: 0px 28px 44px hsla(195, 2%, 55%, 0.4);
   position: relative;
-  left: -10.5rem;
-  top: 9.8rem;
+  left: -8.4rem;
+  top: 2rem;
   padding-bottom: .75rem;
 }
 
@@ -172,8 +171,6 @@ section {
 
 .mobile>header {
   background: linear-gradient(90deg, rgb(140, 59, 252), rgb(228, 67, 255));
-  /* rgb(228, 67, 255)
-  rgb(140, 59, 252) */
   padding: 0 .75rem .6rem 1rem;
   border-radius: 10px 10px 6px 6px;
 }
@@ -245,8 +242,7 @@ section {
 .chat-box {
   background-color: var(--clr-neutral-100);
   width: fit-content;
-  /* max-width: 28ch; */
-  border-radius: .7rem .7rem 5px .7rem;
+  border-radius: .5rem .5em 5px .5rem;
   position: relative;
   top: 0;
   margin-bottom: .5rem;
@@ -257,6 +253,25 @@ section {
   font-size: var(--fs-100);
   font-weight: var(--fw-400);
   background-color: var(--clr-neutral-100);
+  transform-origin: bottom right;
+  transform: scale(0);
+  animation: message 0.2s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes message {
+  0% {
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
 }
 
 .chat-box>p {
@@ -268,10 +283,11 @@ section {
 }
 
 .other-person {
-  border-radius: .7rem .7rem .7rem 5px;
+  border-radius: .5rem .5rem .5rem 5px;
   background-color: hsl(273, 77%, 92%);
   color: var(--clr-primary-400);
   margin-left: 0;
+  transform-origin: bottom left;
 }
 
 .images-box {
@@ -373,9 +389,22 @@ button[type="submit"] {
 }
 
 .left-side>h2 {
-  font-weight: var(--fw-700);
   font-size: var(--fs-700);
   color: var(--clr-primary-500);
   margin-bottom: 1rem;
+}
 
+@media screen and (max-width: 1160px) {
+  .main-section {
+    flex-direction: column;
+  }
+
+  .mobile {
+    left: 0;
+    top: 0;
+  }
+
+  .main-section {
+    left: -15rem;
+  }
 }
