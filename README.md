@@ -54,6 +54,6 @@ I want to learn more about css animations and how to use them in my projects.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/youssefKetata)
+- Frontend Mentor - [@Youssef Ketata](https://www.frontendmentor.io/profile/youssefKetata)
 
 
