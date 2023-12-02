@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/youssefKetata/chat-app-css-illustration)
-- Live Site URL: [Add live site URL here](https://chat-app-css-illustration-ebon.vercel.app/)
+- Solution URL: [github solution link](https://github.com/youssefKetata/chat-app-css-illustration)
+- Live Site URL: [live site URL](https://chat-app-css-illustration-ebon.vercel.app/)
 
 ## My process
 I started by viewing the design that was provided to me. I tried to break it down into smaller components and imagine wich css goups should i make and how to orginize my html.
